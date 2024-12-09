@@ -31,10 +31,12 @@
 
 ## 用例
 
+使用贴图 [template.png](template.png)，在 DeluxeMenus 菜单标题使用
 ```
-%gui_cd_main,218,48%
+&f%gui_cd_main,218,48%
 ```
-相当于
+这个变量就相当于
 ```
 %img_offset_-48%%img_cd_main_1%%img_cd_main_2%%img_offset_-218%%img_cd_main_3%%img_cd_main_4%
 ```
+这个用例在 1.20.4 可以对齐原版物品栏格子，如果对不齐，自行调整参数。

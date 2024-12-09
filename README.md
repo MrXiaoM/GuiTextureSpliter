@@ -32,9 +32,9 @@
 ## 用例
 
 ```
-%gui_cd_main,60,218%
+%gui_cd_main,218,48%
 ```
 相当于
 ```
-%img_offset_-60%%img_cd_main_1%%img_cd_main_2%%img_offset_-218%%img_cd_main_3%%img_cd_main_4%
+%img_offset_-48%%img_cd_main_1%%img_cd_main_2%%img_offset_-218%%img_cd_main_3%%img_cd_main_4%
 ```

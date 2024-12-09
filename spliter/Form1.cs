@@ -29,7 +29,7 @@ namespace spliter
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var root = "resourcepack/" + textBox1.Text + "/textures/" + textBox4.Text + "/";
-            label6.Text = "切割后的贴图会保存到程序目录下以「字体贴图ID」命名的文件夹中，\n你应该将它们放在 ItemsAdder 包的以下路径：\r\n\n" + root + "1.png\n" + root + "2.png\n" + root + "3.png\n" + root + "4.png\n";
+            label6.Text = "切割后的贴图会保存到程序目录下以「字体贴图ID」命名的文件夹中，\n你应该将它们放在 ItemsAdder 包的以下路径：\n" + root + "1.png\n" + root + "2.png\n" + root + "3.png\n" + root + "4.png\n";
             var yTop = numericUpDown1.Value.ToString();
             var yBottom = (numericUpDown1.Value - 128).ToString();
             textBox3.Text = Resources.ia_config

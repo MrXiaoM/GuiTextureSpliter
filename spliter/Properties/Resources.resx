@@ -123,22 +123,22 @@
     height: 128
     ascent: ${y_top}
     font: "minecraft:menus"
-    file: "${path}/1.png"
+    file: "${namespace}:${path}/1.png"
   ${ce_namespace}:${name}_2:
     height: 128
     ascent: ${y_top}
     font: "minecraft:menus"
-    file: "${path}/2.png"
+    file: "${namespace}:${path}/2.png"
   ${ce_namespace}:${name}_3:
     height: 128
     ascent: ${y_bottom}
     font: "minecraft:menus"
-    file: "${path}/3.png"
+    file: "${namespace}:${path}/3.png"
   ${ce_namespace}:${name}_4:
     height: 128
     ascent: ${y_bottom}
     font: "minecraft:menus"
-    file: "${path}/4.png"
+    file: "${namespace}:${path}/4.png"
 </value>
   </data>
   <data name="ia_config" xml:space="preserve">

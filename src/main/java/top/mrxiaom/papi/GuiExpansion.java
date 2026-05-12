@@ -5,6 +5,7 @@ import me.clip.placeholderapi.expansion.Configurable;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +53,35 @@ public class GuiExpansion extends PlaceholderExpansion implements Configurable {
         return "1.0.0";
     }
 
+    public String image(@NotNull String name, @Nullable String suffix) {
+        StringBuilder sb = new StringBuilder();
+        image(sb, name, suffix);
+        return sb.toString();
+    }
+
+    public void image(@NotNull StringBuilder sb, @NotNull String name, @Nullable String suffix) {
+        sb.append("%");
+        sb.append(imagePlaceholder);
+        sb.append(name);
+        if (suffix != null) sb.append(suffix);
+        sb.append("%");
+    }
+
+    public String shift(int value) {
+        StringBuilder sb = new StringBuilder();
+        shift(sb, value);
+        return sb.toString();
+    }
+
+    public void shift(@NotNull StringBuilder sb, int value) {
+        if (value != 0) {
+            sb.append("%");
+            sb.append(shiftPlaceholder);
+            sb.append(value);
+            sb.append("%");
+        }
+    }
+
     @Override
     public String onRequest(OfflinePlayer p, @NotNull String params) {
         String[] split = params.split(",");
@@ -63,25 +93,15 @@ public class GuiExpansion extends PlaceholderExpansion implements Configurable {
             int extraOffset = split.length >= 4 ? -Integer.parseInt(split[3]) : 0;
             int connectOffset = split.length >= 5 ? -Integer.parseInt(split[4]) : 0;
             StringBuilder sb = new StringBuilder();
-            if (topOffset != 0) {
-                sb.append("%").append(shiftPlaceholder).append(topOffset).append("%");
-            }
-            sb.append("%").append(imagePlaceholder).append(name).append("_1%");
-            if (connectOffset != 0) {
-                sb.append("%").append(shiftPlaceholder).append(connectOffset).append("%");
-            }
-            sb.append("%").append(imagePlaceholder).append(name).append("_2%");
-            if (bottomOffset != 0) {
-                sb.append("%").append(shiftPlaceholder).append(bottomOffset).append("%");
-            }
-            sb.append("%").append(imagePlaceholder).append(name).append("_3%");
-            if (connectOffset != 0) {
-                sb.append("%").append(shiftPlaceholder).append(connectOffset).append("%");
-            }
-            sb.append("%").append(imagePlaceholder).append(name).append("_4%");
-            if (extraOffset != 0) {
-                sb.append("%").append(shiftPlaceholder).append(extraOffset).append("%");
-            }
+            shift(sb, topOffset);
+            image(sb, name, "_1");
+            shift(sb, connectOffset);
+            image(sb, name, "_2");
+            shift(sb, bottomOffset);
+            image(sb, name, "_3");
+            shift(sb, connectOffset);
+            image(sb, name, "_4");
+            shift(sb, extraOffset);
             return PlaceholderAPI.setPlaceholders(p, sb.toString());
         } catch (NumberFormatException e) {
             return "WRONG NUMBER";

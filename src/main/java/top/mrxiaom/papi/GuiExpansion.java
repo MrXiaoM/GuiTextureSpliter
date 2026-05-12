@@ -13,11 +13,13 @@ import java.util.Map;
 public class GuiExpansion extends PlaceholderExpansion implements Configurable {
     private String imagePlaceholder;
     private String shiftPlaceholder;
+    private int reverseShiftValue;
 
     @Override
     public boolean register() {
         this.imagePlaceholder = getString("image-placeholder", "img_");
         this.shiftPlaceholder = getString("shift-placeholder", "img_offset_");
+        this.reverseShiftValue = getBoolean("reverse-shift-value", true) ? -1 : 1;
 
         return super.register();
     }
@@ -32,6 +34,7 @@ public class GuiExpansion extends PlaceholderExpansion implements Configurable {
             defaults.put("image-placeholder", "img_");
             defaults.put("shift-placeholder", "img_offset_");
         }
+        defaults.put("reverse-shift-value", true);
         return defaults;
     }
 
@@ -88,10 +91,10 @@ public class GuiExpansion extends PlaceholderExpansion implements Configurable {
         if (split.length < 2) return "MISSING PARAMS";
         String name = split[0];
         try {
-            int topOffset = split.length >= 3 ? -Integer.parseInt(split[2]) : 0;
-            int bottomOffset = -Integer.parseInt(split[1]);
-            int extraOffset = split.length >= 4 ? -Integer.parseInt(split[3]) : 0;
-            int connectOffset = split.length >= 5 ? -Integer.parseInt(split[4]) : 0;
+            int topOffset = split.length >= 3 ? (Integer.parseInt(split[2]) * reverseShiftValue) : 0;
+            int bottomOffset = (Integer.parseInt(split[1]) * reverseShiftValue);
+            int extraOffset = split.length >= 4 ? (Integer.parseInt(split[3]) * reverseShiftValue) : 0;
+            int connectOffset = split.length >= 5 ? (Integer.parseInt(split[4]) * reverseShiftValue) : 0;
             StringBuilder sb = new StringBuilder();
             shift(sb, topOffset);
             image(sb, name, "_1");

@@ -53,7 +53,7 @@ public class GuiExpansion extends PlaceholderExpansion implements Configurable {
     @NotNull
     @Override
     public String getVersion() {
-        return "1.0.0";
+        return "1.0.1";
     }
 
     public String image(@NotNull String name, @Nullable String suffix) {
@@ -96,15 +96,19 @@ public class GuiExpansion extends PlaceholderExpansion implements Configurable {
             int extraOffset = split.length >= 4 ? (Integer.parseInt(split[3]) * reverseShiftValue) : 0;
             int connectOffset = split.length >= 5 ? (Integer.parseInt(split[4]) * reverseShiftValue) : 0;
             StringBuilder sb = new StringBuilder();
+
             shift(sb, topOffset);
             image(sb, name, "_1");
             shift(sb, connectOffset);
             image(sb, name, "_2");
+
             shift(sb, bottomOffset);
             image(sb, name, "_3");
             shift(sb, connectOffset);
             image(sb, name, "_4");
+
             shift(sb, extraOffset);
+
             return PlaceholderAPI.setPlaceholders(p, sb.toString());
         } catch (NumberFormatException e) {
             return "WRONG NUMBER";

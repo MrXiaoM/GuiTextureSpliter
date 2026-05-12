@@ -29,7 +29,7 @@ namespace spliter
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var yTop = numericUpDown1.Value.ToString();
-            var yBottom = (numericUpDown1.Value - 128).ToString();
+            var yBottom = (numericUpDown1.Value - 127).ToString();
             ComponentResourceManager resources = new ComponentResourceManager(typeof(Form1));
 
             labelTipsItemsAdder.Text = resources.GetString("labelTipsItemsAdder.Text")

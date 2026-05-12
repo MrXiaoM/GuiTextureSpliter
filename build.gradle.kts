@@ -12,12 +12,13 @@ repositories {
     
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.20-R0.1-SNAPSHOT")
-    compileOnly("me.clip:placeholderapi:2.11.6")
-    implementation("org.jetbrains:annotations:24.0.0")
+    compileOnly("me.clip:placeholderapi:2.12.2")
+    compileOnly("org.jetbrains:annotations:24.0.0")
 }
 
 val targetJavaVersion = 8
 java {
+    disableAutoTargetJvm()
     val javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
     targetCompatibility = javaVersion

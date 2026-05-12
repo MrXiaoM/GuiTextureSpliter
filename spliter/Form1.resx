@@ -112,18 +112,27 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label6.Text" xml:space="preserve">
+  <data name="labelTipsItemsAdder.Text" xml:space="preserve">
     <value>切割后的贴图会保存到程序目录下以「字体贴图ID」命名的文件夹中，
 你应该将它们放在 ItemsAdder 包的以下路径：
 resourcepack/${namespace}/textures/${path}/1.png
 resourcepack/${namespace}/textures/${path}/2.png
 resourcepack/${namespace}/textures/${path}/3.png
 resourcepack/${namespace}/textures/${path}/4.png
+</value>
+  </data>
+  <data name="labelTipsCraftEngine.Text" xml:space="preserve">
+    <value>切割后的贴图会保存到程序目录下以「字体贴图ID」命名的文件夹中，
+你应该将它们放在 CraftEngine 包的以下路径：
+resourcepack/assets/${namespace}/textures/${path}/1.png
+resourcepack/assets/${namespace}/textures/${path}/2.png
+resourcepack/assets/${namespace}/textures/${path}/3.png
+resourcepack/assets/${namespace}/textures/${path}/4.png
 </value>
   </data>
 </root>

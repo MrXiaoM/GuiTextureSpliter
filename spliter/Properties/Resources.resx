@@ -117,6 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ce_config" xml:space="preserve">
+    <value>images:
+  ${ce_namespace}:${name}_1:
+    height: 128
+    ascent: ${y_top}
+    font: "minecraft:menus"
+    file: "${path}/1.png"
+  ${ce_namespace}:${name}_2:
+    height: 128
+    ascent: ${y_top}
+    font: "minecraft:menus"
+    file: "${path}/2.png"
+  ${ce_namespace}:${name}_3:
+    height: 128
+    ascent: ${y_bottom}
+    font: "minecraft:menus"
+    file: "${path}/3.png"
+  ${ce_namespace}:${name}_4:
+    height: 128
+    ascent: ${y_bottom}
+    font: "minecraft:menus"
+    file: "${path}/4.png"
+</value>
+  </data>
   <data name="ia_config" xml:space="preserve">
     <value>info:
   namespace: ${namespace}

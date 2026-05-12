@@ -61,6 +61,35 @@ namespace spliter.Properties {
         }
         
         /// <summary>
+        ///   查找类似 images:
+        ///  ${ce_namespace}:${name}_1:
+        ///    height: 128
+        ///    ascent: ${y_top}
+        ///    font: &quot;minecraft:menus&quot;
+        ///    file: &quot;${path}/1.png&quot;
+        ///  ${ce_namespace}:${name}_2:
+        ///    height: 128
+        ///    ascent: ${y_top}
+        ///    font: &quot;minecraft:menus&quot;
+        ///    file: &quot;${path}/2.png&quot;
+        ///  ${ce_namespace}:${name}_3:
+        ///    height: 128
+        ///    ascent: ${y_bottom}
+        ///    font: &quot;minecraft:menus&quot;
+        ///    file: &quot;${path}/3.png&quot;
+        ///  ${ce_namespace}:${name}_4:
+        ///    height: 128
+        ///    ascent: ${y_bottom}
+        ///    font: &quot;minecraft:menus&quot;
+        ///    file: &quot;${path}/4.png [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string ce_config {
+            get {
+                return ResourceManager.GetString("ce_config", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 info:
         ///  namespace: ${namespace}
         ///font_images:

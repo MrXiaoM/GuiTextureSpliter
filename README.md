@@ -39,4 +39,10 @@
 ```
 %img_offset_-48%%img_cd_main_1%%img_cd_main_2%%img_offset_-218%%img_cd_main_3%%img_cd_main_4%
 ```
-这个用例在 1.20.4 可以对齐原版物品栏格子，如果对不齐，自行调整参数。
+这个用例在 1.20.4 搭配 ItemsAdder 可以对齐原版物品栏格子，如果对不齐，自行调整参数。
+
+对模板贴图稍加改动，在 1.21.11 搭配 CraftEngine 的用例如下
+
+```
+&f%gui_default:test_menu,217,48,170,1%&r测试
+```
